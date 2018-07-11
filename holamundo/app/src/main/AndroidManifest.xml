@@ -9,15 +9,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HolaActivity">
+        <activity android:name=".layoutEjemplos.constraintLayout.ConstraintLayout">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".Main2Activity"/>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Main2Activity" />
+        <activity
+            android:name=".HolaActivity"
+            android:label="@string/title_activity_constraint_layout" />
+        <activity
+            android:name=".layoutEjemplos.frameLayout.FrameLayout"
+            android:label="@string/title_activity_frame_layout" />
+        <activity
+            android:name=".layoutEjemplos.LinearLayout.LinearLayout"
+            android:label="@string/title_activity_linear_layout" />
+        <activity
+            android:name=".layoutEjemplos.relativeLayout.RelativeLayout"
+            android:label="@string/title_activity_relative_layout"></activity>
     </application>
 
 </manifest>
