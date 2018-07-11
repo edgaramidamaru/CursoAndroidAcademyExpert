@@ -16,4 +16,5 @@
     <string name="title_activity_frame_layout">FrameLayout</string>
     <string name="title_activity_linear_layout">LinearLayout</string>
     <string name="title_activity_relative_layout">RelativeLayout</string>
+    <string name="name">Name</string>
 </resources>
