@@ -12,9 +12,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    TextView txtComic1;
+    TextView txtComic2;
+    TextView txtComic3;
+    TextView txtComic4;
+    FloatingActionButton fbVisibility;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +39,36 @@ public class MenuActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        loadReferences();
+    }
 
+    public void loadReferences() {
+        txtComic1 = findViewById(R.id.txt_comic1);
+        txtComic2 = findViewById(R.id.txt_comic2);
+        txtComic3 = findViewById(R.id.txt_comic3);
+        txtComic4 = findViewById(R.id.txt_comic4);
+        txtComic1.setText("Secret War");
+        txtComic2.setText("Rebirth");
+        txtComic3.setText("Venom");
+        txtComic4.setText("Flash Point");
 
-
+        fbVisibility = findViewById(R.id.floating_button_view);
+        fbVisibility.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (txtComic1.getVisibility() == View.INVISIBLE) {
+                    txtComic1.setVisibility(View.VISIBLE);
+                    txtComic2.setVisibility(View.VISIBLE);
+                    txtComic3.setVisibility(View.VISIBLE);
+                    txtComic4.setVisibility(View.VISIBLE);
+                } else {
+                    txtComic1.setVisibility(View.INVISIBLE);
+                    txtComic2.setVisibility(View.INVISIBLE);
+                    txtComic3.setVisibility(View.INVISIBLE);
+                    txtComic4.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
     }
 
     @Override
