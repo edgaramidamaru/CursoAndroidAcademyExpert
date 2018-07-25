@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.marvelvsdc.brian.marvelvsdc.PersonjeActivity;
 import com.marvelvsdc.brian.marvelvsdc.R;
 import com.marvelvsdc.brian.marvelvsdc.modelos.Personaje;
 
@@ -37,7 +38,7 @@ public class PersonjeRecyclerViewAdapter extends RecyclerView.Adapter<PersonajeV
         holder.cardPerssona.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(activity, personaje.getNombre(), Toast.LENGTH_SHORT).show();
+                ( (PersonjeActivity)activity).showToast(personaje.getNombre());
             }
         });
     }
