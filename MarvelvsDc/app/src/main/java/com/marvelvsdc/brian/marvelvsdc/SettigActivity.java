@@ -12,8 +12,6 @@ import static com.marvelvsdc.brian.marvelvsdc.R.drawable.dclogo;
 
 public class SettigActivity extends AppCompatActivity {
 
-    ImageView imgMarvel;
-    ImageView imgDc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,23 +19,7 @@ public class SettigActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settig);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        imgMarvel = findViewById(R.id.img_marvel);
-        imgDc = findViewById(R.id.img_dc);
-        //imgMarvel.setBackgroundResource(R.drawable.ic_logo_dc);
 
-        imgMarvel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                UtilNavigationiActivity.goToActivityFins(SettigActivity.this, MenuActivity.class);
-            }
-        });
-
-        imgDc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                UtilNavigationiActivity.goToActivityFins(SettigActivity.this, MenuActivity.class);
-            }
-        });
     }
 
 }

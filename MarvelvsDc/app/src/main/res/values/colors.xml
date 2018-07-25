@@ -4,4 +4,9 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorBlack">#000</color>
+    <color name="colorWhite">#fff</color>
+
+    <color name="colorPrimaryMarvel">#aa2e25</color>
+    <color name="colorPrimaryDarkMarvel">#f44336</color>
+    <color name="colorAccentMarvel">#f6685e</color>
 </resources>
