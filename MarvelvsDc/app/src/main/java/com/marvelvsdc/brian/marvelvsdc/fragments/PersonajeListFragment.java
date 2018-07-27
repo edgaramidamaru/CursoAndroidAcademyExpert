@@ -1,4 +1,4 @@
-package com.marvelvsdc.brian.marvelvsdc;
+package com.marvelvsdc.brian.marvelvsdc.fragments;
 
 
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.marvelvsdc.brian.marvelvsdc.R;
 import com.marvelvsdc.brian.marvelvsdc.modelos.Personaje;
 import com.marvelvsdc.brian.marvelvsdc.recyclerView.PersonjeRecyclerViewAdapter;
 

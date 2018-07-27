@@ -1,4 +1,4 @@
-package com.marvelvsdc.brian.marvelvsdc;
+package com.marvelvsdc.brian.marvelvsdc.fragments;
 
 
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.marvelvsdc.brian.marvelvsdc.R;
 import com.marvelvsdc.brian.marvelvsdc.modelos.Personaje;
 
 

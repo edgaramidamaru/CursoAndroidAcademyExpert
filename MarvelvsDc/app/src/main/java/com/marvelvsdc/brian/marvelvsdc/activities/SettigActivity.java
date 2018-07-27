@@ -1,4 +1,4 @@
-package com.marvelvsdc.brian.marvelvsdc;
+package com.marvelvsdc.brian.marvelvsdc.activities;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.marvelvsdc.brian.marvelvsdc.R;
 
 import static com.marvelvsdc.brian.marvelvsdc.R.drawable.dclogo;
 

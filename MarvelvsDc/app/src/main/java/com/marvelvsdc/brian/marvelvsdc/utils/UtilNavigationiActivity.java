@@ -1,4 +1,4 @@
-package com.marvelvsdc.brian.marvelvsdc;
+package com.marvelvsdc.brian.marvelvsdc.utils;
 
 import android.app.Activity;
 import android.content.Intent;

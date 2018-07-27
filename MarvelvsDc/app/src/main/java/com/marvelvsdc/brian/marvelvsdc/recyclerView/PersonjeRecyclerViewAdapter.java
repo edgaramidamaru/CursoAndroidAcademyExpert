@@ -6,9 +6,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-import com.marvelvsdc.brian.marvelvsdc.PersonjeActivity;
+import com.marvelvsdc.brian.marvelvsdc.activities.PersonjeActivity;
 import com.marvelvsdc.brian.marvelvsdc.R;
 import com.marvelvsdc.brian.marvelvsdc.modelos.Personaje;
 

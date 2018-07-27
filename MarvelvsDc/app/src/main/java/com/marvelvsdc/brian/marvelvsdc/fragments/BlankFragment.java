@@ -1,4 +1,4 @@
-package com.marvelvsdc.brian.marvelvsdc;
+package com.marvelvsdc.brian.marvelvsdc.fragments;
 
 
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.marvelvsdc.brian.marvelvsdc.R;
 
 /**
  * A simple {@link Fragment} subclass.

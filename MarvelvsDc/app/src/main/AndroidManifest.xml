@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppThemeMarvel">
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.LoginActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/AppThemeMarvel.NoActionBar">
             <intent-filter>
@@ -20,15 +20,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MenuActivity"
+            android:name=".activities.MenuActivity"
             android:label="@string/app_name"
             android:theme="@style/AppThemeMarvel.NoActionBar"></activity>
         <activity
-            android:name=".SettigActivity"
+            android:name=".activities.SettigActivity"
             android:label="@string/title_activity_settig"
             android:theme="@style/AppThemeMarvel.NoActionBar" />
         <activity
-            android:name=".PersonjeActivity"
+            android:name=".activities.PersonjeActivity"
             android:label="@string/title_activity_personje"
             android:theme="@style/AppThemeMarvel.NoActionBar"></activity>
     </application>

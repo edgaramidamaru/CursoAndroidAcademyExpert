@@ -33,4 +33,8 @@
 
     <style name="AppThemeMarvel.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="myDialog1" parent="Theme.AppCompat.DayNight.Dialog.Alert">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
 </resources>

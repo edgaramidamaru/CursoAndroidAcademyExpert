@@ -1,4 +1,4 @@
-package com.marvelvsdc.brian.marvelvsdc;
+package com.marvelvsdc.brian.marvelvsdc.activities;
 
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -12,6 +12,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import com.marvelvsdc.brian.marvelvsdc.fragments.PersonajeDetailFragment;
+import com.marvelvsdc.brian.marvelvsdc.fragments.PersonajeListFragment;
+import com.marvelvsdc.brian.marvelvsdc.R;
 import com.marvelvsdc.brian.marvelvsdc.modelos.Personaje;
 
 public class PersonjeActivity extends AppCompatActivity {
