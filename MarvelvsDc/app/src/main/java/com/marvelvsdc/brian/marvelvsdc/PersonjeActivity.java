@@ -12,9 +12,12 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import com.marvelvsdc.brian.marvelvsdc.modelos.Personaje;
+
 public class PersonjeActivity extends AppCompatActivity {
 
     PersonajeListFragment personajeListFragment;
+    PersonajeDetailFragment personajeDetailFragment;
     FrameLayout frameLayoutContainer;
     FrameLayout frameLayoutContainer2;
 
@@ -28,7 +31,9 @@ public class PersonjeActivity extends AppCompatActivity {
         frameLayoutContainer = findViewById(R.id.framelyout_container);
         frameLayoutContainer2 = findViewById(R.id.fragmelayout_container2);
         personajeListFragment = new PersonajeListFragment();
+        personajeDetailFragment = new PersonajeDetailFragment();
         loadFramnet(personajeListFragment, R.id.framelyout_container);
+        loadFramnet(personajeDetailFragment, R.id.fragmelayout_container2);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +53,10 @@ public class PersonjeActivity extends AppCompatActivity {
 
     public void showToast(String mensaje){
         Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show();
+    }
+
+    public void showPersonaje(Personaje personaje){
+        personajeDetailFragment.showPersonaje(personaje);
     }
 
 }

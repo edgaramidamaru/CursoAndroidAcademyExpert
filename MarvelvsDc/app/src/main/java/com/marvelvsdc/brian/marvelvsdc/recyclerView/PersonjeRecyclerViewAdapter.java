@@ -39,6 +39,7 @@ public class PersonjeRecyclerViewAdapter extends RecyclerView.Adapter<PersonajeV
             @Override
             public void onClick(View v) {
                 ( (PersonjeActivity)activity).showToast(personaje.getNombre());
+                ( (PersonjeActivity)activity).showPersonaje(personaje);
             }
         });
     }
