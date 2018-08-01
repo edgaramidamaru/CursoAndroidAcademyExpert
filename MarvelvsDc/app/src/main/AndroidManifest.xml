@@ -33,11 +33,7 @@
             android:name=".TextToSpeech.TextToSpeechActivity"
             android:label="@string/title_activity_text_to_speech"
             android:theme="@style/AppThemeMarvel.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".activities.LocalizacionActivity"
@@ -49,7 +45,11 @@
             android:name=".activities.LocalizacionBasica"
             android:label="@string/title_activity_localizacion_basica"
             android:theme="@style/AppThemeMarvel.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
