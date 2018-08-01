@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.marvelvsdc.brian.marvelvsdc">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,6 +16,22 @@
         <activity
             android:name=".activities.LoginActivity"
             android:label="@string/title_activity_login"
+            android:theme="@style/AppThemeMarvel.NoActionBar" />
+        <activity
+            android:name=".activities.MenuActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppThemeMarvel.NoActionBar" />
+        <activity
+            android:name=".activities.SettigActivity"
+            android:label="@string/title_activity_settig"
+            android:theme="@style/AppThemeMarvel.NoActionBar" />
+        <activity
+            android:name=".activities.PersonjeActivity"
+            android:label="@string/title_activity_personje"
+            android:theme="@style/AppThemeMarvel.NoActionBar" />
+        <activity
+            android:name=".TextToSpeech.TextToSpeechActivity"
+            android:label="@string/title_activity_text_to_speech"
             android:theme="@style/AppThemeMarvel.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,17 +40,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.MenuActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppThemeMarvel.NoActionBar"></activity>
+            android:name=".activities.LocalizacionActivity"
+            android:label="@string/title_activity_localizacion"
+            android:theme="@style/AppThemeMarvel.NoActionBar">
+
+        </activity>
         <activity
-            android:name=".activities.SettigActivity"
-            android:label="@string/title_activity_settig"
-            android:theme="@style/AppThemeMarvel.NoActionBar" />
-        <activity
-            android:name=".activities.PersonjeActivity"
-            android:label="@string/title_activity_personje"
-            android:theme="@style/AppThemeMarvel.NoActionBar"></activity>
+            android:name=".activities.LocalizacionBasica"
+            android:label="@string/title_activity_localizacion_basica"
+            android:theme="@style/AppThemeMarvel.NoActionBar">
+
+        </activity>
     </application>
 
 </manifest>

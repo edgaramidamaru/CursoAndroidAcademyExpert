@@ -14,4 +14,18 @@
     <string name="title_activity_personje">PersonjeActivity</string>
     <string name="type">Tipo</string>
     <string name="todo">TODO</string>
+    <string name="title_activity_text_to_speech">TextToSpeech</string>
+
+
+    <string name="appLabel">Text To Speech</string>
+    <string name="strBtnEnglish">English</string>
+    <string name="strBtnSpanish">Spanish</string>
+    <string name="hintEditTextWords">here...</string>
+    <string name="title_activity_localizacion">LocalizacionActivity</string>
+
+
+    <string name="longitude_label">Longitud</string>
+    <string name="latitude_label">Latitud</string>
+    <string name="activity_label">Actividad</string>
+    <string name="title_activity_localizacion_basica">LocalizacionBasica</string>
 </resources>
