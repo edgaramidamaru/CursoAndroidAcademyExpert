@@ -28,4 +28,5 @@
     <string name="latitude_label">Latitud</string>
     <string name="activity_label">Actividad</string>
     <string name="title_activity_localizacion_basica">LocalizacionBasica</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
