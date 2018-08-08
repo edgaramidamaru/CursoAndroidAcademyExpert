@@ -15,6 +15,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.marvelvsdc.brian.marvelvsdc.R;
+import com.marvelvsdc.brian.marvelvsdc.utils.MarkerInfoWindowsAdapter;
 
 public class MapsActivity extends FragmentActivity
         implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
@@ -64,6 +65,7 @@ public class MapsActivity extends FragmentActivity
                 .rotation(90.0f));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
         mMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+        mMap.setInfoWindowAdapter(new MarkerInfoWindowsAdapter(MapsActivity.this));
         mMap.setOnInfoWindowClickListener(this);
     }
 
