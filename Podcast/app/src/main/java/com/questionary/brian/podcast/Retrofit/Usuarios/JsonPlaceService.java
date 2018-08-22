@@ -1,6 +1,10 @@
 package com.questionary.brian.podcast.Retrofit.Usuarios;
 
 
+import com.questionary.brian.podcast.models.UserJson;
+
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -14,17 +18,17 @@ import retrofit2.http.Path;
 
 public interface JsonPlaceService {
 
-//    @GET("/users")
-//    Call<List<UsuariosR>> getlistUsuarios();
-//
-//    @GET("/users/{id}")
-//    Call<UsuariosR> getUser(@Path("id") String id);
-//
+    @GET("/users")
+    Call<List<UserJson>> getlistUsuarios();
+
+    @GET("/users/{id}")
+    Call<UserJson> getUser(@Path("id") String id);
+
 //    @GET("/posts")
 //    Call<List<Posts>> getListPosts();
 //
 //    @POST("/posts")
-//    Call<Posts> postPosts();
+//    Call<String> postPosts();
 //
 //    @PUT("/posts/{id}")
 //    Call<Posts> putPosts(@Path("id") String id);

@@ -14,13 +14,6 @@ public class JsonPlaceHolderApiService {
     public static JsonPlaceService API_SERVICE;
 
     public static JsonPlaceService getRetrofitUser(){
-
-        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
-        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-
-        OkHttpClient.Builder httcliente = new OkHttpClient.Builder();
-        httcliente.addInterceptor(loggingInterceptor);
-
         String baseUrl = "https://jsonplaceholder.typicode.com";
 
         if (API_SERVICE == null){

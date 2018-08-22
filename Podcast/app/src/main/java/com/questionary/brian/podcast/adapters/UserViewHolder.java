@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import com.questionary.brian.podcast.R;
 import com.questionary.brian.podcast.models.User;
+import com.questionary.brian.podcast.models.UserJson;
 
 import org.w3c.dom.Text;
 
@@ -29,6 +30,12 @@ public class UserViewHolder extends RecyclerView.ViewHolder {
         name.setText(user.getName());
         age.setText(user.getAge().toString());
         phone.setText(user.getPhone());
+    }
+
+    public void bindUserJson(UserJson user){
+        name.setText(user.getName());
+        age.setText(user.getEmail());
+        phone.setText(user.getWebSite());
     }
 
 }
