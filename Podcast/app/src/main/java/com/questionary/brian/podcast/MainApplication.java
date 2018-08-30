@@ -14,7 +14,7 @@ public class MainApplication extends Application {
     public void onCreate() {
         super.onCreate();
         DatabaseConfig databaseConfig = new DatabaseConfig.Builder(AppDatabase.class)
-                .addModelClasses(User.class, Car.class).disableMigrationsChecking()
+                .addModelClasses(User.class, Car.class)
                 .build();
         ReActiveAndroid.init(new ReActiveConfig.Builder(this)
         .addDatabaseConfigs(databaseConfig).build());

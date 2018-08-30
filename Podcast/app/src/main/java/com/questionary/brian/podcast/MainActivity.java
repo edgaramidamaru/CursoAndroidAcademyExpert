@@ -1,6 +1,8 @@
 package com.questionary.brian.podcast;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -10,20 +12,36 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.questionary.brian.podcast.Retrofit.Usuarios.JsonPlaceHolderApiService;
 import com.questionary.brian.podcast.adapters.UserJsonRecyclerAdapter;
 import com.questionary.brian.podcast.adapters.UserRecyclerAdapter;
+import com.questionary.brian.podcast.models.Title;
 import com.questionary.brian.podcast.models.User;
 import com.questionary.brian.podcast.models.UserJson;
+import com.reactiveandroid.ReActiveAndroid;
 import com.reactiveandroid.query.Select;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -50,6 +68,9 @@ public class MainActivity extends AppCompatActivity
     FloatingActionButton fab;
     @BindView(R.id.progressBar)
     ProgressBar progressBar;
+    @BindView(R.id.txt_title)
+    TextView txtTitle;
+    FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +78,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
-
+        db = FirebaseFirestore.getInstance();
         loadReferences();
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -67,6 +88,7 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        loadFireBaseData();
     }
 
     public void showUsers() {
@@ -75,6 +97,54 @@ public class MainActivity extends AppCompatActivity
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         rcvUser.setLayoutManager(linearLayoutManager);
         rcvUser.setAdapter(recyclerAdapter);
+    }
+
+    public void loadFireBaseData(){
+        Map<String, Object> user = new HashMap<>();
+        user.put("first", "Ada");
+        user.put("last", "Lovelace");
+        user.put("born", 1815);
+        final Title title =new Title("Titulo1", "tITULO2");
+// Add a new document with a generated ID
+//        db.collection("titulos").document("titlosseundarios").collection("coleccio2")
+//                .add(title)
+//                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+//                    @Override
+//                    public void onSuccess(DocumentReference documentReference) {
+//                        Toast.makeText(MainActivity.this, "Succes", Toast.LENGTH_SHORT).show();
+//                        Log.d("onSucces", "DocumentSnapshot added with ID: " + documentReference.getId());
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+//                        Log.w("onFailure", "Error adding document", e);
+//                    }
+//                });
+
+        DocumentReference docRef = db.collection("titulos").document("titlosseundarios")
+                .collection("coleccio2").document("Z5aGsMhwX8lwwjRSbogl");
+        docRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot snapshot,
+                                @Nullable FirebaseFirestoreException e) {
+                Title title1 = snapshot.toObject(Title.class);
+                txtTitle.setText(title1.getTitle());
+                if (e != null) {
+
+                    Log.w("", "Listen failed.", e);
+                    return;
+                }
+
+                if (snapshot != null && snapshot.exists()) {
+                    Log.d("", "Current data: " + snapshot.getData());
+                } else {
+                    Log.d("", "Current data: null");
+                }
+            }
+        });
+
     }
 
     public void showJsonUser() {
@@ -105,8 +175,9 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void loadUser() {
+        ReActiveAndroid.getDatabase(AppDatabase.class).beginTransaction();
         User user1 = new User("name1", 1, "01", "B", true);
-        user1.save();
+        user1.saveAsync();
         User user2 = new User("name2", 2, "02", "B", true);
         user2.save();
         User user3 = new User("name3", 3, "03", "B", true);
@@ -121,6 +192,8 @@ public class MainActivity extends AppCompatActivity
         user7.save();
         User user8 = new User("name8", 8, "08", "B", false);
         user8.save();
+        //D ReActiveAndroid.getDatabase(AppDatabase.class);
+//        ReActiveAndroid.getDatabase(AppDatabase.class).endTransaction();
     }
 
     @Override
